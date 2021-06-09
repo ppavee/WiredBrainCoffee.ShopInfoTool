@@ -18,10 +18,10 @@ namespace WiredBrainCoffee.ShopInfoTool
             {
                 var line = Console.ReadLine();
 
-                //if (string.Equals("quit", line, StringComparison.OrdinalIgnoreCase))
-                //{
-                //    break;
-                //}
+                if (string.Equals("quit", line, StringComparison.OrdinalIgnoreCase))
+                {
+                    break;
+                }
 
                 var coffeeShops = coffeeShopDataProvider.LoadCoffeeShops();
 
@@ -31,6 +31,11 @@ namespace WiredBrainCoffee.ShopInfoTool
                     foreach (var coffeeShop in coffeeShops)
                     {
                         Console.WriteLine($"> " + coffeeShop.Location);
+                    }
+
+                    if(coffeeShops == null)
+                    {
+                        Console.WriteLine($"> No coffee shops found.");
                     }
                 }
             }
